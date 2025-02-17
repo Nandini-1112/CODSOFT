@@ -1,0 +1,39 @@
+#include <iostream>
+
+int main() {
+    double a, b;
+    char ch;
+
+    std::cout << "Enter first number: ";
+    std::cin >> a;
+
+    std::cout << "Enter an operator (+, -, *, /): ";
+    std::cin >> ch;
+
+    std::cout << "Enter second number: ";
+    std::cin >> b;
+
+    switch(ch) {
+        case '+':
+            std::cout << "Result: " << a + b << "\n";
+            break;
+        case '-':
+            std::cout << "Result: " << a - b << "\n";
+            break;
+        case '*':
+            std::cout << "Result: " << a * b << "\n";
+            break;
+        case '/':
+            if (num2 != 0) {
+                std::cout << "Result: " << a / b << "\n";
+            } else {
+                std::cout << "Error: Division by zero is not allowed.\n";
+            }
+            break;
+        default:
+            std::cout << "Invalid operator.\n";
+            break;
+    }
+
+    return 0;
+}
