@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(static_cast<unsigned int>(time(0))); // Seed random number generator
+    int num = rand() % 10 + 1; // Random number between 1 and 10
+    int guess;
+
+    while (true) {
+        cout << "Guess the number (1 to 10): ";
+        
+        // Input validation
+        while (!(cin >> guess) || guess < 1 || guess > 10) {
+            cin.clear(); // Clear error flag
+            cin.ignore(1000, '\n'); // Ignore invalid input
+            cout << "Invalid input! Please enter a number between 1 and 10: ";
+        }
+
+        if (guess > num) {
+            cout << "Too high! Try again.\n";
+        } else if (guess < num) {
+            cout << "Too low! Try again.\n";
+        } else {
+            cout << "Congratulations! You guessed the number.\n";
+            break;
+        }
+    }
+
+    return 0;
+}
